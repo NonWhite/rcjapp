@@ -1,0 +1,5 @@
+@import models.Perfil; val perfil = session().get( "idperfil" )
+
+<div id = "menu" >
+	@if( perfil != null ){ <input value = "@perfil" id = "menuperfil" style = "display:none;" disabled /> }
+</div>

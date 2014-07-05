@@ -1,0 +1,47 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET		/													controllers.HomeController.home()
+GET		/login												controllers.HomeController.loginForm()
+POST	/login												controllers.HomeController.loginRequest()
+GET		/logout												controllers.HomeController.logout()
+GET		/welcome											controllers.HomeController.welcomeView()
+GET		/template.js										controllers.SessionController.initJs()
+GET		/session/root/sessionWS								controllers.SessionController.sessionWS( uuid )
+GET		/session/root/										controllers.SessionController.sessionWSroot()
+
+# Usuarios
+GET		/administracion/usuario/ver							controllers.UserController.index()
+GET		/administracion/usuario/crear						controllers.UserController.createUserGet()
+GET		/administracion/usuario/editar/:idusuario			controllers.UserController.editUserGet( idusuario: Integer )
+GET		/administracion/usuario/eliminar/:idusuario			controllers.UserController.deleteUser( idusuario: Integer )
+#GET		/administracion/usuario/buscar						TODO
+POST    /administracion/usuario/get							controllers.UserController.getUsuario()
+POST    /administracion/usuario/listar						controllers.UserController.listUsers()
+POST    /administracion/usuario/crear						controllers.UserController.createUserPost()
+POST    /administracion/usuario/editar						controllers.UserController.editUserPost()
+
+# Perfiles
+GET		/administracion/perfil/ver							controllers.ConfigurationController.indexPerfil()
+GET		/administracion/perfil/crear						controllers.ConfigurationController.createPerfilGet()
+GET		/administracion/perfil/editar/:idperfil				controllers.ConfigurationController.editPerfilGet( idperfil: Integer )
+GET		/administracion/perfil/eliminar/:idperfil			controllers.ConfigurationController.deletePerfil( idperfil: Integer )
+POST	/administracion/perfil/crear						controllers.ConfigurationController.createPerfilPost()
+POST	/administracion/perfil/editar						controllers.ConfigurationController.editPerfilPost()
+POST	/administracion/perfil/listar						controllers.ConfigurationController.listPerfiles()
+POST	/administracion/perfil/estructura					controllers.ConfigurationController.getPerfilStructure()
+POST	/administracion/perfil/data							controllers.ConfigurationController.getPerfilData()
+
+# Tipos de documento
+POST	/configuracion/tipodocumento/listar					controllers.ConfigurationController.listTipoDocumentos()
+
+# Areas de trabajo
+POST	/configuracion/areatrabajo/listar					controllers.ConfigurationController.listAreaTrabajo()
+
+# Configuración
+POST	/configuracion/idioma								controllers.ConfigurationController.changeLanguage()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file              							controllers.Assets.at(path="/public", file)

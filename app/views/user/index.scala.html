@@ -1,0 +1,18 @@
+@scripts = {
+	<script src="@routes.Assets.at("javascripts/user/index.js")" type="text/javascript"></script>
+}
+
+@viewMain( scripts ){
+	<table>
+		<thead>
+			<th> ID </th>
+			<th> Usuario </th>
+			<th> Perfil </th>
+			<th> Origen </th>
+			<th> Activo </th>
+			<th width="20%"> Accción <a id = "btn_create_user" href = "#" class="boton_tabla">Crear usuario</a></th>
+		</thead>
+		<tbody id = "list_users">
+		</tbody>
+	</table>
+}

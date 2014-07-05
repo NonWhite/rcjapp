@@ -1,0 +1,21 @@
+@if( session().get( "idusuario" ) != null ){
+	<header>
+		<div class="top">
+			<h1 class="logo">
+				<a href="/">IBtech</a>
+			</h1>
+			<div class = "inline" >
+				<label>Idioma</label>
+				<select id = "cbx_idioma">
+					<option value = "esp">Español</option>
+					<option value = "eng">Ingles</option>
+				</select>
+			</div>
+			<div class="datos_usuario">
+				<span class="bienvenida">Bienvenido :</span>
+				<span class="datos">@session().get( "nombrecompleto" ) <span class="cargo"></span></span>
+				<span class="cerrar_sesion"><a href="/logout">Cerrar Sesión</a></span>
+			</div>
+		</div>
+	</header>
+}

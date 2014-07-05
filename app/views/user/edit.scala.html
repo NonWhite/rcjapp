@@ -1,0 +1,76 @@
+@(idusuario: Integer)
+
+@scripts = {
+	<script src="@routes.Assets.at("javascripts/user/principal.js")" type="text/javascript"></script>
+	<script src="@routes.Assets.at("javascripts/user/edit.js")" type="text/javascript"></script>
+}
+
+@viewMain( scripts ){
+	<div class = "block" style = "display:none;">
+		<label>Id</label>
+		<input id = "idusuario" value = @{idusuario} disabled />
+	</div>
+	<div class = "inline" style="width:24%">
+		<label>Origen</label>
+		<select id = "cbx_origen">
+			<option value = 1>Interno</option>
+			<option value = 0>Externo</option>
+		</select>
+	</div>
+	<div class = "inline" style="width:24%">
+		<label>Nombre*</label>
+		<input id = "nombre" type="text" />
+	</div>
+	<div class = "inline" style="width:24%">
+		<label>Apellido paterno*</label>
+		<input id = "appaterno" type="text" />
+	</div>
+	<div class = "inline" style="width:23%">
+		<label>Apellido materno</label>
+		<input id = "apmaterno" type="text" />
+	</div>
+	<div class = "inline" style="width:24%">
+		<label>Tipo doc. identidad*</label>
+		<select id = "cbx_tipo_doc">
+		</select>
+	</div>
+	<div class = "inline" style="width:24%">
+		<label>N° documento</label>
+		<input id = "nro_documento" type="text" />
+	</div>
+	<div class = "inline" style="width:24%">
+		<label>Correo electrónico</label>
+		<input id = "mail" type="text" />
+	</div>
+	<div class = "inline" style="width:23%">
+		<label>Área de trabajo</label>
+		<select id = "cbx_area_trabajo">
+		</select>
+	</div>
+	<div class = "inline" style="width:24%">
+		<label>Usuario*</label>
+		<input id = "username" disabled type="text" />
+	</div>
+	<div class = "inline" style="width:24%">
+		<label>Password*</label>
+		<input type = "password" id = "password" />
+	</div>
+	<div class = "inline" style="width:24%">
+		<label>Perfil*</label>
+		<select id = "cbx_perfil">
+		</select>
+	</div>
+	<div class = "inline" style="width:23%">
+		<label>Max. Atención</label>
+		<input id = "cantidad" type="text" />
+	</div>
+	<div class = "inline" style="width:99%">
+		<label>Estado</label>
+		<select id = "cbx_estado">
+			<option value = 1>Activo</option>
+			<option value = 0>Inactivo</option>
+		</select>
+	</div>
+	<button  id = "btn_edit_user">Guardar</button>
+	<a  href = "/administracion/usuario/ver" class="boton" style="float:right; margin-right:10px;">Cancelar</a>
+}

@@ -1,0 +1,16 @@
+@scripts = {
+	<script src="@routes.Assets.at("javascripts/configuration/listPerfil.js")" type="text/javascript"></script>
+}
+
+@viewMain( scripts ){
+	<table>
+		<thead>
+			<th> ID </th>
+			<th> Perfil </th>
+			<th> Estado </th>
+			<th width="20%"> Acción <a id = "btn_create_perfil" href = "#" class="boton_tabla">Crear perfil</a></th>
+		</thead>
+		<tbody id = "list_perfiles">
+		</tbody>
+	</table>
+}
