@@ -1,8 +1,6 @@
 import java.lang.reflect.Method;
 
-import configuration.Secured;
 import controllers.ConfigurationController;
-import models.Usuario;
 import play.Application;
 import play.GlobalSettings;
 import play.libs.F.Promise;
@@ -34,21 +32,21 @@ public class Global extends GlobalSettings {
 	
 	@Override
 	public Promise<SimpleResult> onError( RequestHeader arg0 , Throwable arg1 ){
-//		return Promise.<SimpleResult>pure( internalServerError( errorPage.render() ) ) ; // Custom error page
-		return super.onError( arg0 , arg1 ) ; // Original
+		return Promise.<SimpleResult>pure( internalServerError( errorPage.render() ) ) ; // Custom error page
+//		return super.onError( arg0 , arg1 ) ; // Original
 	}
 	
 	@Override
 	public Promise<SimpleResult> onBadRequest( RequestHeader arg0 , String arg1 ){
-//		return Promise.<SimpleResult>pure( internalServerError( errorPage.render() ) ) ; // Custom error page
-		return super.onBadRequest( arg0 , arg1 ) ; // Original
+		return Promise.<SimpleResult>pure( internalServerError( errorPage.render() ) ) ; // Custom error page
+//		return super.onBadRequest( arg0 , arg1 ) ; // Original
 	}
 	
 	
 	@Override
 	public Promise<SimpleResult> onHandlerNotFound( RequestHeader arg0 ){
-//		return Promise.<SimpleResult>pure( internalServerError( errorPage.render() ) ) ; // Custom error page
-		return super.onHandlerNotFound( arg0 ) ; // Original
+		return Promise.<SimpleResult>pure( internalServerError( errorPage.render() ) ) ; // Custom error page
+//		return super.onHandlerNotFound( arg0 ) ; // Original
 	}
 	
 	@Override
